@@ -1,0 +1,32 @@
+.spuare{
+    background-color: aqua;
+    width: 200px;
+    height: 200px;
+    border: 5px solid black;
+    font-size: 24px;
+    font-weight: bolder;
+    line-height: 50px;
+}
+
+.board-row::after{
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.tic-tac-toe{
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: auto;
+    border: 3px soild rgb(0, 0, 0);
+    border-radius: 30px;
+    padding: 20px;
+}
+
+.game-borad{
+    width: 300px;
+    background-color: lightgreen;
+    padding: 10px;
+}
