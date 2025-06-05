@@ -2,7 +2,7 @@ import React from 'react';
 import Square from './Square';
 import './tictactoe.css';
 
-function Board(xIsNext, squares, onPlay) {
+function Board({xIsNext, squares, onPlay}) {
 
     // 判斷是否連成直線
     function calculateWinner(squares) {
@@ -23,7 +23,7 @@ function Board(xIsNext, squares, onPlay) {
             }
         }
         return null;
-    }
+    };
 
     const winner = calculateWinner(squares);
     let status;
