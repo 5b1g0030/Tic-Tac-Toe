@@ -3,6 +3,38 @@ import Square from './Square';
 import './tictactoe.css';
 
 function Board(xIsNext, squares, onPlay) {
+
+    // 判斷是否連成直線
+    function calculateWinner(squares) {
+        const lines = [
+            [0, 1, 2],
+            [3, 4, 5],
+            [6, 7, 8],
+            [0, 3, 6],
+            [1, 4, 7],
+            [2, 5, 8],
+            [0, 4, 8],
+            [2, 4, 6]
+        ];
+        for (let i = 0; i < lines.length; i++) {
+            const [a, b, c] = lines[i];
+            if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+                return squares[a];
+            }
+        }
+        return null;
+    }
+
+    const winner = calculateWinner(squares);
+    let status;
+
+    if (winner){
+        status = "Winner: " + winner;
+    }
+    else{
+        status = "Next player: ${xIsNext ? 'X' : 'O'}";
+    }
+
     const handleClick = (i) => {
         // console.log('Square clicked:', i);
         const nextSquares = squares.slice();
@@ -16,7 +48,8 @@ function Board(xIsNext, squares, onPlay) {
         else {
             nextSquares[i] = 'O'; // 如果是 O 的回合，則在方格中放置 O
         }
-    }
+        onPlay(nextSquares);
+    };
 
     return (
         <>
@@ -40,28 +73,6 @@ function Board(xIsNext, squares, onPlay) {
         </>
     );
 }
-
-// 判斷是否連成直線
-function calculateWinner(squares) {
-    const lines = [
-        [0, 1, 2],
-        [3, 4, 5],
-        [6, 7, 8],
-        [0, 3, 6],
-        [1, 4, 7],
-        [2, 5, 8],
-        [0, 4, 8],
-        [2, 4, 6]
-    ];
-    for (let i = 0; i < lines.length; i++) {
-        const [a, b, c] = lines[i];
-        if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-            return squares[a];
-        }
-    }
-    return null;
-}
-
 
 
 
