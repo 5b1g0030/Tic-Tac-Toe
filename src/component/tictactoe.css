@@ -14,7 +14,6 @@
     padding: 0;
     text-align: center;
     cursor: pointer;
-    border-radius: 0%;
 }
 
 /* 每一行的格子 */
@@ -29,13 +28,19 @@
 {
     width: 500px;
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column; /* 元件排列方向 */
+    align-items: center; /* 垂直置中 */
     justify-content: center; /* 水平置中對齊 */
     margin: auto; /* 置中對齊 */
     border: 3px solid blue;
     border-radius: 30px;
     padding: 20px;
+    background-color: rgb(255, 255, 255);
+}
+
+.game-tictactoe{
+    display: flex;
+    flex-direction: row;
 }
 
 /* 遊戲區背景 */
@@ -45,6 +50,7 @@
     border-radius: 10px;
     align-items: center;
     font-size: 20px;
+    height: 180px; /* 固定長度避免被拉長 */
 }
 
 /* 遊戲歷程按鈕 */

@@ -10,6 +10,7 @@ body,
 
 body {
   display: block;
+  background-image: url('/public/TicTacToe.avif');
 }
 
 /* :root {

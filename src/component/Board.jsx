@@ -2,6 +2,7 @@ import React from "react";
 import Square from "./Square";
 import './tictactoe.css';
 
+// 九宮格顯示
 function Board({ xIsNext, squares, onPlay }) {
   const handleClick = (i) => {
     if (calculateWinner(squares) || squares[i]) {

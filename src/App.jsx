@@ -7,7 +7,6 @@ function App() {
 
   return (
     <>
-      <h1>井字遊戲</h1>
       <TicTacToe/>
     </>
   )

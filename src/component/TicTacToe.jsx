@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Board from "./Board";
 import './tictactoe.css';
 
+// 遊戲歷程顯示
 function TicTacToe() {
   const [history, setHistory] = useState([Array(9).fill(null)]);
   const [currentMove, setCurrentMove] = useState(0);
@@ -34,12 +35,16 @@ function TicTacToe() {
 
   return (
     <div className="game">
-      <div className="game-board">
+      <h1>井字遊戲</h1>
+      <div className="game-tictactoe">
+        <div className="game-board">
+        {/* 遊戲區 */}
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
-      </div>
-      <div className="game-info">
-        <h4>遊戲歷程</h4>
-        <ol>{moves}</ol>
+        </div>
+        <div className="game-info">
+          <h4>遊戲歷程</h4>
+          <ol>{moves}</ol>
+        </div>
       </div>
     </div>
   );
