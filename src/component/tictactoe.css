@@ -1,32 +1,64 @@
-.spuare{
-    background-color: rgb(255, 173, 66);
+/* 九宮格 */
+.square{
+    background-color: bisque;
+    color: black;
     width: 50px;
     height: 50px;
     border: 1px solid black;
     font-size: 24px;
-    font-weight: bolder;
-    line-height: 50px;
+    font-weight: bold;
+    margin-top: -1px; /* 讓每個格子上下貼合 */
+    margin-right: -1px; /* 讓每個格子左右貼合 */
+    line-height: 50px; /* 讓格子裡的OX置中 */
+    float: left;
+    padding: 0;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0%;
 }
 
-.board-row::after{
+/* 每一行的格子 */
+.board-row:after {
+    clear: both;
     content: '';
     display: table;
-    clear: both;
 }
 
-.tic-tac-toe{
-    width: 400px;
+/* 遊戲整體排版 */
+.game
+{
+    width: 500px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: auto;
-    border: 3px soild rgb(0, 0, 0);
+    justify-content: center; /* 水平置中對齊 */
+    margin: auto; /* 置中對齊 */
+    border: 3px solid blue;
     border-radius: 30px;
     padding: 20px;
 }
 
-.game-borad{
-    width: 300px;
+/* 遊戲區背景 */
+.game-board{
     background-color: lightgreen;
     padding: 10px;
+    border-radius: 10px;
+    align-items: center;
+    font-size: 20px;
+}
+
+/* 遊戲歷程按鈕 */
+.state-Buttom{
+    background-color: rgb(161, 103, 255);
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    color: white;
+}
+
+/* 遊戲歷程按鈕-滑鼠懸停效果 */
+.state-Buttom:hover{
+    border: 2px solid rgb(200, 157, 255);
 }
